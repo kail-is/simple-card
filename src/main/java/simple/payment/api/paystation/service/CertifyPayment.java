@@ -18,13 +18,6 @@ import static simple.payment.api.paystation.enumeration.PaymentState.*;
 @Component
 public class CertifyPayment {
 
-    private final Random random = new Random();
-
-    private PaymentState getCertifyRandomState() {
-        PaymentState[] states = new PaymentState[]{TIMEOUT, CERTIFIED, INVALID};
-        return states[random.nextInt(states.length)];
-    }
-
     public ResponseEntity<?> process(CardApiCertifyCommand command) {
 
         PaymentState state = getCertifyRandomState();
@@ -37,6 +30,14 @@ public class CertifyPayment {
             return ResponseEntity.badRequest().body(createCertifyRejectedView(state, command, requestAt));
         }
 
+    }
+
+
+    private final Random random = new Random();
+
+    private PaymentState getCertifyRandomState() {
+        PaymentState[] states = new PaymentState[]{TIMEOUT, CERTIFIED, INVALID};
+        return states[random.nextInt(states.length)];
     }
 
 
