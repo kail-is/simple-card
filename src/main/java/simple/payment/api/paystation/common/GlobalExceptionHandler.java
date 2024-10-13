@@ -27,10 +27,19 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(InterruptedException.class)
     public ResponseEntity<String> handleInterruptedException(InterruptedException ex) {
-        String errorMessage = ex.getMessage() != null ? ex.getMessage() : "Bad request";
-        log.error("Internal server error", ex);
+        String errorMessage = ex.getMessage() != null ? ex.getMessage() : "Internal server error";
+        log.error("Internal server error: ", ex);
         return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+
+    @ExceptionHandler(RejectedProcessException.class)
+    public ResponseEntity<String> handleRejectedProcessException(RejectedProcessException ex) {
+        String errorMessage = ex.getMessage() != null ? ex.getMessage() : "Internal server error";
+        log.error("Internal server error: ", ex);
+        return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 
 
 }

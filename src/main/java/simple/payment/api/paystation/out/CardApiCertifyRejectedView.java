@@ -4,11 +4,10 @@ import simple.payment.api.paystation.enumeration.PaymentState;
 
 import java.time.LocalDateTime;
 
-public record CardApiCertifyView(
+public record CardApiCertifyRejectedView(
         PaymentState state,
+        String failReason,
         String cardNumber,
         String customerName,
-        String certifyNumber,
-        LocalDateTime requestAt,
-        LocalDateTime certifiedAt
+        LocalDateTime requestAt
 ) {}

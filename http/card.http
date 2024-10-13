@@ -25,6 +25,7 @@ Content-Type: application/json
 {
   "price": 10000,
   "customerId": "customer-id",
+  "certifyNumber": "bef2d038-d855-420e-9f28-e13cb022c8e2",
   "cardNumber": "1234-5678-1234-5678",
   "expiryDate": "12/25",
   "cvc": "123"

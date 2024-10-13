@@ -4,11 +4,9 @@ import simple.payment.api.paystation.enumeration.PaymentState;
 
 import java.time.LocalDateTime;
 
-public record CardApiCancelView(
+public record CardApiCancelRejectView(
         PaymentState state,
+        String failReason,
         String paymentId,
-        String transactionId,
-        String canceledId,
-        LocalDateTime requestAt,
-        LocalDateTime canceledAt
+        LocalDateTime requestedAt
 ) {}
