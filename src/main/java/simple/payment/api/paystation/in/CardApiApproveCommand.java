@@ -4,7 +4,7 @@ public record CardApiApproveCommand(
         String customerName,
         int installmentPeriod,
         Long price,
-        String certifyNumber,
+        String cardIdentityCertifyNumber,
         String cardNumber,
         String cvc,
         String expireDate,
