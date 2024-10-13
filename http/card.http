@@ -1,0 +1,31 @@
+### 카드 인증 요청
+POST http://localhost:8080/api/card/certify
+Content-Type: application/json
+
+{
+  "customerName": "서은빈",
+  "cardNumber": "1234-5678-1234-5678",
+  "expiryDate": "12/25",
+  "cvc": "123"
+}
+
+### 카드 결제 취소 요청
+POST http://localhost:8080/api/card/cancel
+Content-Type: application/json
+
+{
+  "paymentId": "1234567890",
+  "transactionId": "0987654321"
+}
+
+### 카드 결제 승인 요청
+POST http://localhost:8080/api/card/pay
+Content-Type: application/json
+
+{
+  "price": 10000,
+  "customerId": "customer-id",
+  "cardNumber": "1234-5678-1234-5678",
+  "expiryDate": "12/25",
+  "cvc": "123"
+}
