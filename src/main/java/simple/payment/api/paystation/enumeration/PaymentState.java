@@ -6,5 +6,6 @@ public enum PaymentState {
     CANCELED,
     REJECTED,
     TIMEOUT,
-    FINISHED
+    FINISHED,
+    INVALID
 }

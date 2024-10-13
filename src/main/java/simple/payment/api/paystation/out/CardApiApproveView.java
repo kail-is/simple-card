@@ -8,6 +8,7 @@ import java.util.UUID;
 public record CardApiApproveView(
         PaymentState state,
         LocalDateTime requestedAt,
+        LocalDateTime ApprovedAt,
         Long paymentAmount,
         UUID transactionId
 ) {}
