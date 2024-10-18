@@ -36,7 +36,8 @@ public class CertifyPayment {
     private final Random random = new Random();
 
     private PaymentState getCertifyRandomState() {
-        PaymentState[] states = new PaymentState[]{TIMEOUT, CERTIFIED, INVALID};
+//        PaymentState[] states = new PaymentState[]{TIMEOUT, CERTIFIED, INVALID};
+        PaymentState[] states = new PaymentState[]{CERTIFIED};
         return states[random.nextInt(states.length)];
     }
 

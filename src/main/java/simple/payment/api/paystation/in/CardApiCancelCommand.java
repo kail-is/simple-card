@@ -1,8 +1,10 @@
 package simple.payment.api.paystation.in;
 
+import java.util.UUID;
+
 public record CardApiCancelCommand(
-        String customerId,
-        String paymentId,
-        String transactionId
+        String sellerId,
+        UUID paymentId,
+        UUID transactionId
 ) {}
 

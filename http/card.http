@@ -14,8 +14,8 @@ POST http://localhost:8080/api/card/cancel
 Content-Type: application/json
 
 {
-  "paymentId": "1234567890",
-  "transactionId": "0987654321"
+  "paymentId": "bef2d038-d855-420e-9f28-e13cb022c8e2",
+  "transactionId": "bef2d038-d855-420e-9f28-e13cb022c8e2"
 }
 
 ### 카드 결제 승인 요청

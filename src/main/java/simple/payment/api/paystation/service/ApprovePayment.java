@@ -43,8 +43,9 @@ public class ApprovePayment {
         return new CardApiApproveView(
                 state,
                 command.price(),
-                UUID.randomUUID().toString(),
-                UUID.randomUUID().toString(),
+                command.sellerId(),
+                UUID.randomUUID(),
+                UUID.randomUUID(),
                 requestAt,
                 approvedAt
         );
@@ -67,7 +68,9 @@ public class ApprovePayment {
 
     private final Random random = new Random();
     private PaymentState getApproveRandomState() {
-        PaymentState[] states = new PaymentState[]{TIMEOUT, APPROVED, REJECTED};
+//        PaymentState[] states = new PaymentState[]{TIMEOUT, APPROVED, REJECTED};
+
+        PaymentState[] states = new PaymentState[]{APPROVED};
         return states[new Random().nextInt(states.length)];
     }
 

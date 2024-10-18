@@ -45,6 +45,8 @@ public class CancelPayment {
                 state,
                 command.paymentId(),
                 command.transactionId(),
+                0L,
+                command.sellerId(),
                 UUID.randomUUID().toString(),
                 requestAt,
                 canceledAt
@@ -69,7 +71,9 @@ public class CancelPayment {
 
     private final Random random = new Random();
     private PaymentState getCancelRandomState() {
-        PaymentState[] states = new PaymentState[]{TIMEOUT, CANCELED, REJECTED};
+//        PaymentState[] states = new PaymentState[]{TIMEOUT, CANCELED, REJECTED};
+        PaymentState[] states = new PaymentState[]{CANCELED};
+
         return states[random.nextInt(states.length)];
     }
 

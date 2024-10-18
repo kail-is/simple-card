@@ -1,7 +1,7 @@
 package simple.payment.api.paystation.in;
 
 public record CardApiApproveCommand(
-        String customerName,
+        String sellerId,
         int installmentPeriod,
         Long price,
         String cardIdentityCertifyNumber,
