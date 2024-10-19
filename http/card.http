@@ -1,3 +1,15 @@
+### 카드 유효성 검증
+POST http://localhost:8080/api/card/validate
+Content-Type: application/json
+
+{
+  "cardNumber": "1234-5678-9012-3456",
+  "expireDate": "02/27",
+  "cvc": "123",
+  "cardCompany": "KB",
+  "customerName": "customerName"
+}
+
 ### 카드 인증 요청
 POST http://localhost:8080/api/card/certify
 Content-Type: application/json

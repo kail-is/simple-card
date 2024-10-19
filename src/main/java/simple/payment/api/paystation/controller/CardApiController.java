@@ -9,9 +9,15 @@ import simple.payment.api.paystation.service.*;
 @RequestMapping("/api/card")
 public class CardApiController {
 
+    private final ValidatePayment validatePayment;
     private final CertifyPayment certifyPayment;
     private final ApprovePayment approvePayment;
     private final CancelPayment cancelPayment;
+
+    @PostMapping("/validate")
+    public ResponseEntity<?> validatePayment(@RequestBody CardApiValidateCommand command) {
+        return validatePayment.process(command);
+    }
 
 
     @PostMapping("/certify")
@@ -32,7 +38,9 @@ public class CardApiController {
     }
 
 
-    public CardApiController(CertifyPayment certifyPayment, ApprovePayment approvePayment, CancelPayment cancelPayment) {
+    public CardApiController(ValidatePayment validatePayment, CertifyPayment certifyPayment,
+                             ApprovePayment approvePayment, CancelPayment cancelPayment) {
+        this.validatePayment = validatePayment;
         this.certifyPayment = certifyPayment;
         this.approvePayment = approvePayment;
         this.cancelPayment = cancelPayment;
